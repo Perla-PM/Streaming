@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar al Historial</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Agregar al Historial</h1>
+    <form action="{{ url_for('add_to_history', media_id=media_id) }}" method="post">
+        <label for="user_id">ID del Usuario:</label>
+        <input type="text" id="user_id" name="user_id" required>
+
+        <label for="date_playlist">Fecha del Playback:</label>
+        <input type="text" id="date_playlist" name="date_playlist" required>
+
+        <button type="submit">Agregar al Historial</button>
+    </form>
+
+    <a href="{{ url_for('display_media') }}">Volver a la lista de medios</a>
+</body>
+</html>

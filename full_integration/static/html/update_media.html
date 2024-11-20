@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Media</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #fffd6d, #ff6af3);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #000000;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        form {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 400px;
+            box-sizing: border-box;
+            text-align: left;
+            backdrop-filter: blur(10px);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #111111;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 5px;
+            box-sizing: border-box;
+            background-color: rgba(53, 49, 49, 0.2);
+            color: #fff;
+            font-size: 16px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #34495e;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            text-transform: uppercase;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        button:hover {
+            background-color: #2c3e50;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 400px;
+            padding: 20px;
+            box-sizing: border-box;
+            background-color: rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Update Media</h1>
+        <form action="{{ url_for('update_media', media_id=media.id_media) }}" method="post">
+            <label for="name_media">Media Name:</label>
+            <input type="text" id="name_media" name="name_media" value="{{ media.name_media }}" required>
+            <br>
+            <label for="description_media">Description:</label>
+            <input type="text" id="description_media" name="description_media" value="{{ media.description_media }}" required>
+            <br>
+            <button type="submit">Update</button>
+        </form>
+    </div>
+</body>
+</html>
